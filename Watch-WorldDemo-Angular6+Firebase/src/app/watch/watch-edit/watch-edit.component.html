@@ -1,0 +1,102 @@
+<body style="background: url(/assets/create2.jpg)">
+
+  <div *ngIf="bindingModel">
+  <div class="container">
+    <div class="col-xs-12">
+      <form #f="ngForm" (ngSubmit)="edit()" >
+        <div class="container">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label class="text" for="name">Name</label>
+              <input
+                required
+                type="text"
+                id="name"
+                [(ngModel)]="bindingModel.name"
+                name="name"
+                class="form-control">
+            </div>
+          </div>
+        </div>
+        <div class="container">
+            <div class="col-xs-12">
+              <div class="form-group">
+                <label class="text" for="name">Price</label>
+                <input
+                  required
+                  type="number"
+                  id="price"
+                  name="price"
+                  [(ngModel)]="bindingModel.price"
+                  class="form-control">
+              </div>
+            </div>
+          </div>
+          <div class="container">
+              <div class="col-xs-12">
+                <div class="form-group">
+                  <label class="text" for="name">Condition</label>
+                  <input
+                    required
+                    type="text"
+                    id="condition"
+                    name="condition"
+                    [(ngModel)]="bindingModel.condition"
+                    class="form-control">
+                </div>
+              </div>
+            </div>
+            <div class="container">
+                <div class="col-xs-12">
+                  <div class="form-group">
+                    <label class="text" for="phone">Contact Phone</label>
+                    <input
+                      required
+                      type="phone"
+                      id="phone"
+                      name="phone"
+                      [(ngModel)]="bindingModel.phone"
+                      class="form-control">
+                  </div>
+                </div>
+              </div>
+        <div class="container">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label class="text" for="imagePath">Image URL</label>
+              <input
+                required
+                type="text"
+                id="imagePath"
+                [(ngModel)]="bindingModel.imagePath"
+                name="imagePath"
+                class="form-control">
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="col-xs-12">
+            <img src="{{bindingModel.imagePath}}" class="img-responsive">
+          </div>
+        </div>
+        <div class="container">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <textarea class="text"
+                required
+                type="text"
+                id="description"
+                class="form-control"
+                [(ngModel)]="bindingModel.description"
+                name="description"
+                rows="6">Description </textarea>
+            </div>
+          </div>
+        </div>
+       <button class="btn btn-primary" [disabled]="f.invalid" type="submit">Edit</button>
+      </form>
+    </div>
+  </div>
+  
+</div>
+</body>

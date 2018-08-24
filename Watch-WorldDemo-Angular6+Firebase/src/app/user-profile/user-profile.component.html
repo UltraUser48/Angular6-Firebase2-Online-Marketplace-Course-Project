@@ -1,0 +1,48 @@
+<div style="background-color: rgb(22, 22, 22)" class="container-fluid well span6">
+    <h1 class="text">Hello!</h1><h3 class="text">Welcome to your Profile!</h3>
+    <br/>
+	<div style="background: url(/assets/profile.jpg); padding: 5px 11px; border: 8px solid #dfdfdf;" class="row-fluid">
+        <div class="span2" >
+		    <img style="max-height: 80px;" src="https://mywindowshub.com/wp-content/uploads/2013/01/user-account.jpg" class="img-circle">
+        </div>
+        <br/>
+        <div class="span8">
+            <h3 class="text">Username: {{user}}</h3>
+            <h6 class="text">Country : United States</h6>
+            <button class="btn btn-light" routerLink="/watches/list" >Review all the Offers !</button>
+            <br/>
+            <br/>
+            <button class="btn btn-light" routerLink="//watches/create" >Publish your Offer !</button>
+        </div>
+</div>
+<br/>
+<br/>
+<h3 class="text">Below are the Offers Published by you!</h3>
+<br/>
+</div>
+<div style="background: url(/assets/pattern.jpg)" class="container">
+   <div class="container">
+  <div *ngFor="let watch of watches | async" class="col-md-12">
+  <div *ngIf=" this.user == watch.author ">
+      <a
+      routerLink="/watches/details/{{watch.id}}"
+      style="cursor: pointer; padding: 5px 11px; border: 8px solid #5e6362;"
+      class="list-group-item clearfix">
+      <div class="pull-down">
+          <span class="embed-responsive-16by9">
+              <img
+                src="{{watch.imagePath}}"
+                alt="{{watch.name}}"
+                class="img-circle"
+                style="max-height: 50px;">
+         </span>
+        <h4 class="list-group-item-heading">Offer Name: {{watch.name}}</h4>
+        <p class="list-group-item-info">You have posted this Item for: {{watch.price}}$</p>
+        <p class="list-group-item-info"><b>You have Published this Offer on:</b> {{watch.date | date:"medium"}}</p>
+      </div>
+    </a> 
+<br/>
+    </div>     
+  </div>
+   </div>
+   </div>

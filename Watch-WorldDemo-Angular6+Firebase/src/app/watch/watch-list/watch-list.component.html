@@ -1,0 +1,43 @@
+<div style="background-color: rgb(211, 211, 211)" class="jumbotron text-center">
+  <h1>Here are all the active offers</h1>
+  <p>Note:You will have the option to edit an offer after you sibmit it</p>  
+</div>
+<body style="background: url(/assets/pattern.jpg)" >
+<div class="panel panel-default" style="background: url(/assets/pattern.jpg)">
+<div class="col-xs-12">
+  <button class="btn btn-info" routerLink="/watches/create">Post a new Offer!</button>
+</div>
+</div>
+<br />
+<div style="align-self:center; background: url(/assets/pattern.jpg) " class="container">
+  <div style="align-self:center;" class="container">
+      <div style="align-self:center;" *ngFor="let watch of watches | async" class="container">
+        
+        <a
+          routerLink="/watches/details/{{watch.id}}"
+          style="cursor: pointer; padding: 5px 11px; border: 8px solid #ffffff; background-color: rgb(235, 235, 235) "
+          class="list-group-item clearfix">
+          <div class="pull-down">
+              <span class="embed-responsive-16by9">
+                  <img
+                    src="{{watch.imagePath}}"
+                    alt="{{watch.name}}"
+                    class="img-circle"
+                    style="max-height: 60px;">
+             </span>
+             <br/>
+             <br/>
+            <h4 class="list-group-item-heading"><b>{{watch.name}}</b></h4>
+            <p class="list-group-item-info"><b>Price:</b> {{watch.price}}$</p>
+            <p class="list-group-item-info"><b>Condition:</b> {{watch.phone}}</p>
+            <p class="list-group-item-info"><b>Offer Published on:</b> {{watch.date | date:"medium"}}</p>
+          
+          </div>
+        </a>
+        <br/>
+        
+        <br/>
+        </div>   
+      </div>
+       </div>
+      </body>

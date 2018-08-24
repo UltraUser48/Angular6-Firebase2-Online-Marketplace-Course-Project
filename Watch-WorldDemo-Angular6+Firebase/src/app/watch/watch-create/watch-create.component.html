@@ -1,0 +1,100 @@
+<body style="background: url(/assets/create2.jpg)">
+  
+<div class="container">
+  <div class="col-xs-12">
+    <form #f="ngForm" (ngSubmit)="create()">
+      <div class="container">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label class="text" for="name">Name of Offer</label>
+            <input
+              required
+              type="text"
+              id="name"
+              name="name"
+              [(ngModel)]="bindingModel.name"
+              class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label class="text" for="name">Price (In United States Dollars)</label>
+            <input
+              required
+              type="number"
+              id="price"
+              name="price"
+              [(ngModel)]="bindingModel.price"
+              class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label class="text" for="name">Condition of the Item (New or Used)</label>
+            <input
+              required
+              type="text"
+              id="condition"
+              name="condition"
+              [(ngModel)]="bindingModel.condition"
+              class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label class="text" for="phone">Contact Phone</label>
+            <input
+              required
+              type="phone"
+              id="phone"
+              name="phone"
+              [(ngModel)]="bindingModel.phone"
+              class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label  class="text" for="imagePath">Image URL (Link to a picture of the Item)</label>
+            <input
+              required
+              type="text"
+              id="imagePath"
+              name="imagePath"
+              [(ngModel)]="bindingModel.imagePath"
+              class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="col-xs-12">
+          <img src="{{bindingModel.imagePath}}" class="img-responsive">
+        </div>
+      </div>
+      <div class="container">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <textarea class="text"
+              required
+              type="text"
+              id="description"
+              class="form-control"
+              name="description"
+              [(ngModel)]="bindingModel.description"
+              rows="6">Description</textarea>
+          </div>
+        </div>
+      </div>
+  
+     <button class="btn btn-primary" [disabled]="f.invalid" type="submit">Create Offer</button>
+    </form>
+  </div>
+</div>
+</body>

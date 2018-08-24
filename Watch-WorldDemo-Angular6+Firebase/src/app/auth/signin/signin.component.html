@@ -1,0 +1,44 @@
+<div style="background-color: rgb(211, 211, 211)" class="jumbotron text-center">
+  <h1>Please Login to Post and View Offers </h1>
+  <p>   </p>  
+</div>
+  <body style="background: url(/assets/login.png)">
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h3 class="text">Please enter your information below to Login</h3>
+      <p class="text">Please enter only correct information!<br/>Thank you!</p>
+      
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form #f="ngForm" (ngSubmit)="login(f)">
+        <div class="form-group">
+          <label class="text" for="email">Username ( e-Mail Address ) </label>
+          <input 
+          required
+          type="email" 
+          id="email" 
+          name="email"
+          ngModel
+          class="form-control">
+        </div>
+        <div class="form-group">
+          <label class="text" for="password">Password</label>
+          <input
+            required
+            type="password"
+            id="password"
+            name="password"
+            ngModel
+            class="form-control">
+        </div>
+        <button class="btn btn-info" [disabled]="f.invalid" type="submit">Sign In</button>
+      </form>
+    </div>
+  </div>
+</body>
+  
